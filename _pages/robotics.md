@@ -1,10 +1,10 @@
 ---
-layout: archives
+layout: archive
 permalink: /robotics/
 title: "Robotics Posts"
 author_profile: true
 header:
-  # image: # "/image/__"
+  image: "/images/switz.jpeg"
 ---
 {% include base_path %}
 {% include group-by-array collection=site.posts field="tags" %}
