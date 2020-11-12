@@ -1,11 +1,11 @@
----
+<!-- ---
 layout: archive
 permalink: /robotics/
 title: "Robotics Posts"
 author_profile: true
 header:
   image: "/images/switz.jpeg"
----
+--- -->
 
 
 <!-- {% include base_path %}
