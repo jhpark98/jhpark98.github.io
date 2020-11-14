@@ -236,7 +236,7 @@ defaults:
   # _robotics
   - scope:
       path: ""
-      type: portfolio
+      type: robotics
     values:
       layout: single
       author_profile: false
