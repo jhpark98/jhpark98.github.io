@@ -23,31 +23,36 @@ My Desktop status:
 - Docker Version:
 
 ## Installing Docker
+Two ways to install Dockers:
+- Ubuntu repositories
+  - Simple and quick
+  1. `$ sudo apt-get update`
+  2. `$ sudo apt-get install docker.io`
+- Official Docker repository
+  - [Official Docker Installation Guide](https://docs.docker.com/engine/install/ubuntu/#installation-methods)
+  - I took a recommended approach: set up Docker’s repositories and install from them, for ease of installation and upgrade tasks
 
-### Installing from the Ubuntu repository
-`$ sudo apt-get install docker.io`
-* Installing from the official Docker repository
-1. Install necessary packages
-`$ sudo apt-get install apt-transport-https ca-certificates curl
-gnupg-agent software-properties-common`
+  1. Install necessary packages\
+  `$ sudo apt-get install apt-transport-https ca-certificates curl
+  gnupg-agent software-properties-common`
 
-2. Add the official GPG key from Docker
-`$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo
-apt-key add -`
+  2. Add the official GPG key from Docker\
+  `$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo
+  apt-key add -`
 
-3. Set up the Docker repository
-`$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"`
+  3. Set up the Docker repository\
+  `$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"`
 
-4. Update the apt package index once again
-`$ sudo apt-get update`
+  4. Update the apt package index once again\
+  `$ sudo apt-get update`
 
-5. Install the Docker package
-`$ sudo apt install docker-ce`
+  5. Install the Docker package\
+  `$ sudo apt install docker-ce`
 
-6. Check Docker version
-`$ docker --version
+  6. Check Docker version\
+  `$ docker --version
 
-Docker can only be run as a root user by default. Add username to the Docker group.
+Docker can only be run as a root user by default. Add username to the Docker group.\
 `$ sudo usermod -aG docker ${USER}`
 
 ### Working with Docker
