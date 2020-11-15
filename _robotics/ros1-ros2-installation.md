@@ -20,7 +20,7 @@ header:
 
 My Desktop status:
 - Ubuntu Version: 18.04.5 LTS (Bionic Beaver)
-- Docker Version:
+- Docker Version: 19.03.13
 
 ## Installing Docker
 Two ways to install Dockers:
@@ -39,9 +39,11 @@ Two ways to install Dockers:
   2. Add the official GPG key from Docker\
   `$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo
   apt-key add -`
+  It will return: `OK`
 
   3. Set up the Docker repository\
   `$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"`
+  It will return: `Reading package lists... Done`
 
   4. Update the apt package index once again\
   `$ sudo apt-get update`
@@ -50,21 +52,16 @@ Two ways to install Dockers:
   `$ sudo apt install docker-ce`
 
   6. Check Docker version\
-  `$ docker --version
+  `$ docker --version`
 
 Docker can only be run as a root user by default. Add username to the Docker group.\
 `$ sudo usermod -aG docker ${USER}`
 
 ### Working with Docker
-
 `$ sudo docker pull ros:melodic-ros-core`
-<!-- ```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-``` -->
+  - Add `sudo` before docker command to make sure you don't get permission error
 
-## Installing ROS Melodic (ROS1 Distribution) on Linux
+## Installing ROS Melodic (ROS1 Distribution) on Linuxs
 [ROS Melodic Ubuntu Installation link](http://wiki.ros.org/melodic/Installation/Ubuntu)
 * Setup  sources.list
 *
