@@ -58,8 +58,13 @@ Docker can only be run as a root user by default. Add username to the Docker gro
 `$ sudo usermod -aG docker ${USER}`
 
 ### Working with Docker
+- Pull a ros image\
 `$ sudo docker pull ros:melodic-ros-core`
+  - In our case, our image is created from `ros` repository with `melodic-ros-core` tag.
   - Add `sudo` before docker command to make sure you don't get permission error
+- View docker iamges\
+  `$ sudo docker images`
+  - With `docker images` command, we get to see the list of images.
 
 ## Installing ROS Melodic (ROS1 Distribution) on Linuxs
 [ROS Melodic Ubuntu Installation link](http://wiki.ros.org/melodic/Installation/Ubuntu)
