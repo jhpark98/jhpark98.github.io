@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "Ji Hwan Park"
-  avatar           : "images/switz.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : # "images/switz.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am interested in combining robotics with A.I. technologies."
   location         : "South Korea"
   email            : "jamesparkjihwan73@gmasil.com"
@@ -294,7 +294,7 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
-  
+
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
