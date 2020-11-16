@@ -104,8 +104,8 @@ We are now good to move on to setting up ROS2 package.
 - [Building ROS 2 on Linux](https://index.ros.org/doc/ros2/Installation/Dashing/Linux-Development-Setup/)
 - We will build ROS2 manually on Linux, which is called source installation.
 
-1. Set locale\
-```bash
+1. Set locale
+```
 locale  # check for UTF-8
 
 sudo apt update && sudo apt install locales
@@ -125,7 +125,7 @@ locale  # verify settings
 - `sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture)] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list'`
 
 3. Install development tools and ROS tools:
-```bash
+```script
 # Notice that we are soon going to use these tools that we are installing.
 $ sudo apt update && sudo apt install -y \
   build-essential \
@@ -164,6 +164,7 @@ $ sudo apt install --no-install-recommends -y \
 ```
 
 4. Getting the ROS-2 source code
+```bash
 - Create `ros2_ws` and `src` folders
 - "# Create parent directory `ros2_ws` and its subdirectoriy `src`"
 - `$ mkdir -p ~/ros2_ws/src`
@@ -172,7 +173,7 @@ $ sudo apt install --no-install-recommends -y \
 - `$ wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos`
 - Import the ROS2 repository(`ros2.repos`) to `src` folder
 - `$ vcs import src < ros2.repos`
-
+```
 Since the workspace is all set, we move on to install dependencies.
 
 ### Installing dependencies using rosdep
