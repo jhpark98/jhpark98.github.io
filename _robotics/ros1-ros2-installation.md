@@ -105,7 +105,7 @@ We are now good to move on to setting up ROS2 package.
 - We will build ROS2 manually on Linux, which is called source installation.
 
 1. Set locale
-```
+```bash
 locale  # check for UTF-8
 
 sudo apt update && sudo apt install locales
@@ -125,8 +125,8 @@ locale  # verify settings
 - `sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture)] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list'`
 
 3. Install development tools and ROS tools:
-```script
-# Notice that we are soon going to use these tools that we are installing.
+```bash
+# Notice that we are soon going to use these tools that we are installing
 $ sudo apt update && sudo apt install -y \
   build-essential \
   cmake \
@@ -165,14 +165,14 @@ $ sudo apt install --no-install-recommends -y \
 
 4. Getting the ROS-2 source code
 ```bash
-- Create `ros2_ws` and `src` folders
-- "# Create parent directory `ros2_ws` and its subdirectoriy `src`"
-- `$ mkdir -p ~/ros2_ws/src`
-- `$ cd ~/ros2_ws`
-- "# `wget` allows you to download files from web. In this case, we download the latest ROS2 version(clone all repos)."
-- `$ wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos`
-- Import the ROS2 repository(`ros2.repos`) to `src` folder
-- `$ vcs import src < ros2.repos`
+Create `ros2_ws` and `src` folders
+# Create parent directory `ros2_ws` and its subdirectoriy `src`
+$ mkdir -p ~/ros2_ws/src
+$ cd ~/ros2_ws
+# `wget` allows you to download files from web. In this case, we download the latest ROS2 version(clone all repos)
+$ wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos
+Import the ROS2 repository(`ros2.repos`) to `src` folder
+$ vcs import src < ros2.repos
 ```
 Since the workspace is all set, we move on to install dependencies.
 
@@ -185,19 +185,22 @@ $ rosdep install --from-paths src --ignore-src --rosdistro dashing -y --skip-key
 
 ### Build the code in the workspace
 - Similar to what we had in ROS1(`catkin_make` command in `catkin_ws` folder), in ROS2, we use `colcon build`
-- `cd ~/ros2_ws/`
-- `colcon build --symlink-install`
+```bash
+cd ~/ros2_ws/
+colcon build --symlink-install
+```
 
 ## Setting up ROS-1, ROS-2, or both environments
 ### Setup Environment
 - Use the `alias` command and add them to the bash script:
 1. Invoke bash script
 - `gedit` is the text editor of the GNOME desktop environment. Use following command to install:
-- `$ sudo apt update && sudo apt upgrade && sudo apt-get install gedit`
-- `$ sudo gedit ~/.bashrc`
-- if `getdit` fails to work, just use `vim ` editor to edit the script.
-- `$ sudo vim ~/.bashrc`
-
+```
+$ sudo apt update && sudo apt upgrade && sudo apt-get install gedit
+$ sudo gedit ~/.bashrc
+# if `getdit` fails to work, just use `vim ` editor to edit the script
+$ sudo vim ~/.bashrc
+```
 2. Add two lines of `alias` command
 - `$ alias initros1='source /opt/ros/melodic/setup.bash'`
 - `$ alias initros2='source ~/ros2_ws/install/local_setup.bash'`
