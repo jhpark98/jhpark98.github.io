@@ -101,11 +101,11 @@ We are now good to move on to setting up ROS2 package.
 
 ## Installing ROS-2
 ### Building ROS 2 Dashing Diademata on Linux
-- [Building ROS 2 on Linux]()https://index.ros.org/doc/ros2/Installation/Dashing/Linux-Development-Setup/
-- We will build ROS-2 manually on Linux, which is called source installtion .
+- [Building ROS 2 on Linux](https://index.ros.org/doc/ros2/Installation/Dashing/Linux-Development-Setup/)
+- We will build ROS2 manually on Linux, which is called source installation.
 
-1. Set locale
-```markdown
+1. Set locale\
+```bash
 locale  # check for UTF-8
 
 sudo apt update && sudo apt install locales
@@ -165,17 +165,13 @@ $ sudo apt install --no-install-recommends -y \
 
 4. Getting the ROS-2 source code
 - Create `ros2_ws` and `src` folders
-```markdown
-# Create parent directory `ros2_ws` and its subdirectoriy `src`
-$ mkdir -p ~/ros2_ws/src
-$ cd ~/ros2_ws
-
-# `wget` allows you to download files from web. In this case, we download the latest ROS2 version(clone all repos)."
-$ wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos`
-
-# Import the ROS2 repository(`ros2.repos`) to `src` folder
-$ vcs import src < ros2.repos
-```
+- "# Create parent directory `ros2_ws` and its subdirectoriy `src`"
+- `$ mkdir -p ~/ros2_ws/src`
+- `$ cd ~/ros2_ws`
+- "# `wget` allows you to download files from web. In this case, we download the latest ROS2 version(clone all repos)."
+- `$ wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos`
+- Import the ROS2 repository(`ros2.repos`) to `src` folder
+- `$ vcs import src < ros2.repos`
 
 Since the workspace is all set, we move on to install dependencies.
 
