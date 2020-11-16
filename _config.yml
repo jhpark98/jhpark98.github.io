@@ -85,7 +85,7 @@ social:
 
 # Analytics
 analytics:
-  provider               : false # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider               : google # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
     tracking_id          :
     anonymize_ip         : # true, false (default)
@@ -97,7 +97,7 @@ author:
   avatar           : # "images/switz.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am interested in combining robotics with A.I. technologies."
   location         : "South Korea"
-  email            : "jamesparkjihwan73@gmasil.com"
+  email            : "jamesparkjihwan73@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -178,7 +178,6 @@ keep_files:
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-
 # Conversion
 markdown: kramdown
 highlighter: rouge
@@ -200,12 +199,12 @@ kramdown:
 
 # Collections
 collections:
-  # docs:
-  #   output: true
-  #   permalink: /:collection/:path/
   robotics:
     output: true
     permalink: /:collection/:path/
+  # docs:
+  #   output: true
+  #   permalink: /:collection/:path/
 
 # Defaults
 defaults:
