@@ -4,6 +4,7 @@ layout: collection
 permalink: /robotics/
 collection: robotics
 entries_layout: grid
+
 classes: wide
 
 ---
