@@ -261,34 +261,34 @@ $ ros2 run examples_rclcpp_minimal_publisher publisher_member_function
 
 ```
 "----------------------------------------"
-### Installing ROS Melodic (ROS1 Distribution) on Linux\
+### Installing ROS Melodic (ROS1 Distribution) on Linux
 [ROS Melodic Ubuntu Installation link](http://wiki.ros.org/melodic/Installation/Ubuntu)
-0. Configure  Ubuntu repositories
+1. Configure  Ubuntu repositories
   - Hit `Software Updater` → `Settings` → `Ubuntu Software` → Check to allow "restricted," "universe," and "multiverse."
-1. Setup sources.list\
+2. Setup sources.list
   - `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'`
 
-2. Set up keys\
+3. Set up keys
   - `sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654`
 
-3. Installation\
+4. Installation
 - As usual, check Debian package index is up-to-date\
 - `sudo apt update`\
 - In my case, I am going to install the recommended Desktop-Full install one.\
 - `sudo apt install ros-melodic-desktop-full`
 
-4. Environment setup\
+5. Environment setup
 - If you miss this step, then you are going to have to explicitly source `source /opt/ros/melodic/setup.bash` everytime you open up a new shell.
 - `echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc`\
 - Whenever we open up our shell, all we have to do is:\
 - `source ~/.bashrc`
 - Since we are going to install both ROS1 and ROS2, there is going to be some changes made in our `~/.bashrc` script. So, watch out!
 
-5. Dependencies for building packages\
+6. Dependencies for building packages
 - Up to this point, we have only installed what we need to run the **core ROS packages**.
 - To efficiently create and manage our ROS workspaces, we install some dependencies:
 - `sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential`
-- 5.1. Initialize rosdep
+- 6.1. Initialize rosdep
   - Initialize rosdep with following commands:
     - `sudo rosdep init`
     - `rosdep update`
