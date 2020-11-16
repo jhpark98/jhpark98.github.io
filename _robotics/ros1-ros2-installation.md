@@ -125,7 +125,7 @@ locale  # verify settings
 - `sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture)] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list'`
 
 3. Install development tools and ROS tools:
-```markdown
+```bash
 # Notice that we are soon going to use these tools that we are installing.
 $ sudo apt update && sudo apt install -y \
   build-essential \
@@ -176,7 +176,7 @@ $ sudo apt install --no-install-recommends -y \
 Since the workspace is all set, we move on to install dependencies.
 
 ### Installing dependencies using rosdep
-```markdown
+```bash
 $ sudo rosdep init
 $ rosdep update
 $ rosdep install --from-paths src --ignore-src --rosdistro dashing -y --skip-keys "console_bridge fastcdr fastrtps libopensplice67 libopensplice69 rti-connext-dds-5.3.1 urdfdom_headers"
@@ -230,7 +230,7 @@ $ rosdep install --from-paths src --ignore-src --rosdistro dashing -y --skip-key
 
 ### Setting up the ROS-2 workspace
 - Let's consider the `ros2_examples_ws` package for demonstration purposes:
-```markdown
+```bash
 $ initros2
 $ mkdir ~/ros2_workspace_ws && cd ~/ros2_workspace_ws
 $ git clone https://github.com/ros2/examples src/examples
