@@ -165,13 +165,17 @@ $ sudo apt install --no-install-recommends -y \
 
 4. Getting the ROS-2 source code
 - Create `ros2_ws` and `src` folders
-- "# Create parent directory `ros2_ws` and its subdirectoriy `src`"
-- `$ mkdir -p ~/ros2_ws/src`
-- `$ cd ~/ros2_ws`
-- "# `wget` allows you to download files from web. In this case, we download the latest ROS2 version(clone all repos)."
-- `$ wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos`
-- Import the ROS2 repository(`ros2.repos`) to `src` folder
-- `$ vcs import src < ros2.repos`
+```markdown
+# Create parent directory `ros2_ws` and its subdirectoriy `src`
+$ mkdir -p ~/ros2_ws/src
+$ cd ~/ros2_ws
+
+# `wget` allows you to download files from web. In this case, we download the latest ROS2 version(clone all repos)."
+$ wget https://raw.githubusercontent.com/ros2/ros2/release-latest/ros2.repos`
+
+# Import the ROS2 repository(`ros2.repos`) to `src` folder
+$ vcs import src < ros2.repos
+```
 
 Since the workspace is all set, we move on to install dependencies.
 
