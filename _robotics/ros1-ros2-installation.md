@@ -28,11 +28,12 @@ My Desktop status:
 Two ways to install Dockers:
 - Ubuntu repositories
   - Simple and quick
-  1. `$ sudo apt-get update`
-  2. `$ sudo apt-get install docker.io`
+1. `$ sudo apt-get update`
+2. `$ sudo apt-get install docker.io`
 - Official Docker repository
   - [Official Docker Installation Guide](https://docs.docker.com/engine/install/ubuntu/#installation-methods)
-  - I took a recommended approach: set up Docker’s repositories and install from them, for ease of installation and upgrade tasks
+  - I took a <u>recommended approach<u>: set up Docker’s repositories and
+  install from them, for ease of installation and upgrade tasks.
 
   1. Install necessary packages\
   `$ sudo apt-get install apt-transport-https ca-certificates curl
@@ -40,12 +41,12 @@ Two ways to install Dockers:
 
   2. Add the official GPG key from Docker\
   `$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo
-  apt-key add -`
-  - It will return: `OK`
+  apt-key add -`\
+It will return: `OK`
 
   3. Set up the Docker repository\
-  `$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"`
-  - It will return: `Reading package lists... Done`
+  `$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"`\
+It will return: `Reading package lists... Done`
 
   4. Update the apt package index once again\
   `$ sudo apt-get update`
@@ -56,25 +57,54 @@ Two ways to install Dockers:
   6. Check Docker version\
   `$ docker --version`
 
-Docker can only be run as a root user by default. Make sure to add username to the Docker group.\
-`$ sudo usermod -aG docker ${USER}`
+Docker can only be run as a <u>root user<u> by default. Make sure to add username to the Docker group.\
 
-### Working with Docker
-- Pull a ROS Image\
+I suggest two ways to make your life easier in the future.
+1. create the docker group and add your user:
+  1. Create the `docker` group.
+  `$ sudo groupadd docker`
+  2. Add your user to the `docker` group.
+  `$ sudo usermod -aG docker ${USER}`
+
+2. Sideways
+```
+# Wihtout `sudo`, we see an error(?):
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock ...
+# This allows us to connect to the Docker daemon socket without accessing as a root user.
+sudo chmod 666 /var/run/docker.sock
+# From now on, you can omit `sudo` in your command.
+```
+
+p.s `chmod` is an abbreviation of *change mode.* `chmod` command changes attributes from a file/folder. `chmod 666 file/folder` enables <u>all users<u> to read and write, but cannot execute the file/folder.
+
+## ROS1(Melodic) Working with Docker
+1. Pull a ROS Image\
 `$ sudo docker pull ros:melodic-ros-core`
-  - In our case, our image is created from `ros` repository with `melodic-ros-core` tag.
-  - Add `sudo` before docker command to make sure you don't get permission error
-- View docker iamges\
+  - In our case, our image is created from `ros` repository with a `melodic-ros-core` tag.
+2. View docker iamges\
   `$ sudo docker images`
-  - With `docker images` command, we get to see the list of images.
-- Run Docker Container\
+  - With `docker images` command, we get the list of (docker) images.
+3. Run Docker Container\
+  - Derive container with: `docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]`
   - `$ sudo docker run -it ros:melodic-ros-core`
-  - If you put `pwd`, it will return current working directory, which is `/`
-  - Do `cd root`
-  - `$ apt-get update`
-  - `$ apt-get install ros-melodic-actionlib-tutorials`
-- Commit the modifications
+  -`-it` is a shorter version of `-i -t`. Since we want to move into an interactive session, we add that option in command to allocate a tty for the container process
+  - Long story short, it allows us to be in terminal as if we're in a new bash terminal separate from host machine. (basically, bash for container)
+
+- (in interactive session)
+  - If you put `pwd`, it returns current working directory, which is `/`
+  - Move into `root` folder using: `cd root`
+  - From now on, we create a folder on top of this root folder.
+  - Once you are in the interactive session, you no longer have to use `sudo`
+  - Basically, you can just do `apt-get update`
+- 3-1. Open new bash for the same container
+  - We can start additional bash session in the same container; in the future, you do this way to start a talker for one bash and start a listener for another bash.
+  - `docker exec -it <container name> bash`
+  - or `docker exec -it <container ID> bash`
+
+4.  Commit the modifications
   - `$ sudo docker commit <container-id> ros:melodic-ros-core`
+
+
 
 ### Setting up the ROS workspace
 1. Create an empty workspace folder and a `src` folder and switch into `src` folder.

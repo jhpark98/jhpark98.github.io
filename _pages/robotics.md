@@ -6,8 +6,8 @@ collection: robotics
 entries_layout: grid
 
 classes: wide
-
 ---
+
 <!-- sidebar:
   - title: "Role"
     image: http://placehold.it/350x250

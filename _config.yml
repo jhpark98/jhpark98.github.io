@@ -202,6 +202,12 @@ collections:
   robotics:
     output: true
     permalink: /:collection/:path/
+  linux:
+    output: true
+    permalink: /:collection/:path/
+  rl:
+    output: true
+    permalink: /:collection/:path/
   # docs:
   #   output: true
   #   permalink: /:collection/:path/
@@ -244,6 +250,25 @@ defaults:
       author_profile: false
       share: true
 
+  # _linux
+  - scope:
+      path: ""
+      type: linux
+    values:
+      show_date: true
+      layout: single
+      author_profile: false
+      share: true
+
+  # _rl
+  - scope:
+      path: ""
+      type: rl
+    values:
+      show_date: true
+      layout: single
+      author_profile: false
+      share: true
 # Sass/SCSS
 sass:
   sass_dir: _sass
