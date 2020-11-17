@@ -4,6 +4,10 @@ main:
     url: https://jhpark98.github.io/about/
   - title: "Robotics"
     url: /robotics/
+  - title: "Linux"
+    url: /linux/
+  - title: "RL"
+    url: /rl/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"

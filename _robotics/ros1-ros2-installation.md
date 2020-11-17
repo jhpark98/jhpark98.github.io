@@ -92,7 +92,7 @@ p.s `chmod` is an abbreviation of *change mode.* `chmod` command changes attribu
 
 - (in interactive session)
   - If you put `pwd`, it returns current working directory, which is `/`
-  - Move into `root` folder using: `cd root`
+  - Move into `root` folder using: `cd root` or `cd ~`
   - From now on, we create a folder on top of this root folder.
   - Once you are in the interactive session, you no longer have to use `sudo`
   - Basically, you can just do `apt-get update`
